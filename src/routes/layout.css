@@ -120,7 +120,7 @@ html {
 .primary-btn {
   background:
     radial-gradient(circle at 17.5% 0%, #89c4d366, transparent 35%),
-    radial-gradient(circle at 82.5% 100%, #89c4d366, transparent 35%),
+    radial-gradient(circle at 82.5% 100%, #89c4d340, transparent 25%),
     linear-gradient(#1c659a, #1c659a);
   display: flex;
   justify-content: center;

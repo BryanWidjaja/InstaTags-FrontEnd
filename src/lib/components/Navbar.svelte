@@ -14,7 +14,7 @@
 	}
 </script>
 
-<nav class="navbar">
+<nav class="navbar" class:show={mobileMenuOpen}>
 	<a href="/" class="logo">InstaTags</a>
 
 	<button class="mobile-toggle" onclick={toggleMobileMenu} aria-label="Toggle menu">
@@ -39,13 +39,14 @@
 
 <style>
 	.navbar {
+		height: 112px;
 		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		z-index: 100;
-		padding: 1.5rem 3.5rem;
-		backdrop-filter: blur(12px);
+		padding: 1.5rem 4rem;
+		backdrop-filter: blur(0.75rem);
 		transition: all 0.3s ease;
 		display: flex;
 		align-items: center;
@@ -54,12 +55,12 @@
 
 	.logo {
 		font-family: LaurentianStd-It;
-		font-size: 2.25rem;
+		font-size: 2.5rem;
 		transition: all 0.3s ease;
 	}
 
 	.logo:hover {
-		opacity: 0.85;
+		color: var(--primary-400);
 	}
 
 	.nav-links {
@@ -70,7 +71,7 @@
 	}
 
 	.nav-link {
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 		font-weight: 400;
 		color: var(--gray-300);
 		transition: all 0.3s ease;
@@ -85,11 +86,11 @@
 	.nav-link::after {
 		content: '';
 		position: absolute;
-		bottom: -4px;
+		bottom: -0.25rem;
 		left: 0;
 		width: 0;
-		height: 2px;
-		background: var(--primary-500);
+		height: 0.1rem;
+		background: linear-gradient(135deg, var(--primary-400), var(--primary-600));
 		transition: all 0.3s ease;
 	}
 
@@ -101,23 +102,23 @@
 	.mobile-toggle {
 		display: none;
 		flex-direction: column;
-		gap: 5px;
+		gap: 0.25rem;
 		background: none;
 		border: none;
-		padding: 4px;
+		padding: 0.25rem;
 	}
 
 	.bar {
 		display: block;
-		width: 24px;
-		height: 2px;
+		width: 1.5rem;
+		height: 0.1rem;
 		background: var(--gray-100);
 		transition: all 0.3s ease;
-		border-radius: 1px;
+		border-radius: 0.01rem;
 	}
 
 	.bar.open:nth-child(1) {
-		transform: rotate(45deg) translate(5px, 5px);
+		transform: rotate(45deg) translate(0.25rem, 0.25rem);
 	}
 
 	.bar.open:nth-child(2) {
@@ -125,7 +126,7 @@
 	}
 
 	.bar.open:nth-child(3) {
-		transform: rotate(-45deg) translate(5px, -5px);
+		transform: rotate(-45deg) translate(0.25rem, -0.25rem);
 	}
 
 	@media (max-width: 768px) {
@@ -133,18 +134,30 @@
 			display: flex;
 		}
 
+		.navbar {
+			height: 96px;
+		}
+
+		.navbar.show {
+			background-color: #1c1c1c80;
+		}
+
+		.logo {
+			font-size: 1.75rem;
+		}
+
 		.nav-links {
+			padding: 1rem !important;
+			margin-top: 96px;
 			position: fixed;
 			top: 0;
-			right: -100%;
+			right: 100%;
+			width: 40%;
 			height: 100vh;
-			width: 260px;
 			flex-direction: column;
-			background: var(--color-navy-900);
+			background-color: #1c1c1c80;
 			padding: 5rem 2rem;
 			gap: 1.5rem;
-			transition: all 0.3s ease;
-			border-left: 1px solid var(--color-navy-600);
 		}
 
 		.nav-links.show {

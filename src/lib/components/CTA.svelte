@@ -17,9 +17,9 @@
 	.cta {
 		background: 
 			linear-gradient(#1C1C1C00 18%, #1C1C1C),
-			url("../assets/cta/cta-bg.png")
+			url("/cta/cta-bg.png")
 		;
-		height: 512px;
+		height: 480px;
 
 		display: flex;
 		flex-direction: column;
