@@ -186,7 +186,7 @@ html {
   background-position: 0% 0%;
   border-radius: inherit;
   z-index: -1;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.45s ease-in-out;
 
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -197,4 +197,10 @@ html {
 
 .outline-btn:hover::after {
   background-position: 100% 0%;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--white), var(--gray-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

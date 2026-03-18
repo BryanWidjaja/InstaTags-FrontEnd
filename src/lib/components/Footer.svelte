@@ -24,21 +24,21 @@
 			</div>
 			<div class="footer-links-column">
 				<p class="footer-link-header">Company</p>
-				<a href="/about-us" class="footer-link">About Us</a>
-				<a href="/about-us" class="footer-link">Our Vision</a>
-				<a href="/about-us" class="footer-link">Our Mission</a>
+				<a href="/about-us#aboutus" class="footer-link">About Us</a>
+				<a href="/about-us#ourvision" class="footer-link">Our Vision</a>
+				<a href="/about-us#ourmission" class="footer-link">Our Mission</a>
 			</div>
 			<div class="footer-links-column">
 				<p class="footer-link-header">Contacts</p>
-				<a href="/" class="footer-link footer-contact-container">
+				<a href="https://github.com/BryanWidjaja" class="footer-link footer-contact-container">
 					<img src="/icons/email.svg" alt="Email" class="contact-img">
 					<p>info@instatags.com</p>
 				</a>
-				<a href="/" class="footer-link footer-contact-container">
+				<a href="https://github.com/BryanWidjaja" class="footer-link footer-contact-container">
 					<img src="/icons/phone.svg" alt="Phone" class="contact-img">
 					<p>+62 8957 0131 6601</p>
 				</a>
-				<a href="/" class="footer-link footer-contact-container">
+				<a href="https://github.com/BryanWidjaja" class="footer-link footer-contact-container">
 					<img src="/icons/location.svg" alt="Location" class="contact-img">
 					<p>Banten, Indonesia</p>
 				</a>
@@ -46,16 +46,16 @@
 		</div>
 
 		<div class="footer-socials-container">
-			<a href="/" class="footer-social">
+			<a href="https://github.com/BryanWidjaja" class="footer-social">
 				<img src="/icons/instagram.svg" alt="">
 			</a>
-			<a href="/" class="footer-social">
+			<a href="https://github.com/BryanWidjaja" class="footer-social">
 				<img src="/icons/facebook.svg" alt="">
 			</a>
-			<a href="/" class="footer-social">
+			<a href="https://github.com/BryanWidjaja" class="footer-social">
 				<img src="/icons/twitter.svg" alt="">
 			</a>
-			<a href="/" class="footer-social">
+			<a href="https://github.com/BryanWidjaja" class="footer-social">
 				<img src="/icons/tiktok.svg" alt="">
 			</a>
 		</div>
@@ -67,13 +67,13 @@
 		</p>
 
 		<div class="footer-terms-container">
-			<a href="/" class="footer-term-link">
+			<a href="https://github.com/BryanWidjaja" class="footer-term-link">
 				Terms & Conditions
 			</a>
-			<a href="/" class="footer-term-link">
+			<a href="https://github.com/BryanWidjaja" class="footer-term-link">
 				Privacy Policy
 			</a>
-			<a href="/" class="footer-term-link">
+			<a href="https://github.com/BryanWidjaja" class="footer-term-link">
 				Cookies
 			</a>
 		</div>
