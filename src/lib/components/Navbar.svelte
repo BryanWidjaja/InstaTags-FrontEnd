@@ -54,7 +54,7 @@
 
 	.logo {
 		font-family: LaurentianStd-It;
-		font-size: 2rem;
+		font-size: 2.25rem;
 		transition: all 0.3s ease;
 	}
 
@@ -146,7 +146,7 @@
 			transition: all 0.3s ease;
 			border-left: 1px solid var(--color-navy-600);
 		}
-		
+
 		.nav-links.show {
 			right: 0;
 		}
