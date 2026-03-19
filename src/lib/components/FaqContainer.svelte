@@ -72,6 +72,6 @@
     .vertical-line {
         min-width: 0.15rem;
         height: auto;
-        background-color: var(--primary-600);
+        background: linear-gradient(135deg, var(--primary-400), var(--primary-600));
     }
 </style>
