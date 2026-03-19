@@ -34,7 +34,7 @@
 </script>
 
 <section class="hero">
-	<div class="hero-left-container">
+	<div class="hero-inner-container">
 		<h1 class="hero-header gradient-text">
 			Save time on tags. <br/>
 			Spend it on content.
@@ -49,7 +49,6 @@
 	</div>
 
 	<img src="/hero/hero-hashtag.png" alt="#">
-
 </section>
 
 <section class="features">
@@ -127,7 +126,9 @@
 	}
 
 	.hero {
+		position: relative;
 		height: 100vh;
+		width: 100%;
 		padding-top: 112px;
 		flex-direction: row;
 		justify-content: space-between;
@@ -140,12 +141,23 @@
 		;
 	}
 
-	.hero-left-container {
+	.hero img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
+		z-index: -1;
+		opacity: 0.075;
+		scale: 1.45;
+	}
+
+	.hero-inner-container {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 		justify-content: center;
 		gap: 1rem;
+		text-align: center;
 	}
 
 	.hero-header {
@@ -156,7 +168,7 @@
 	.hero-desc {
 		font-size: 1.25rem;
 		font-weight: 300;
-		width: 85%;
+		width: 62.5%;
 	}
 
 	.hero-btn-container {
@@ -166,7 +178,14 @@
 	}
 
 	.features {
-		background: linear-gradient(#3A4E7200 83%, #3A4E7226);
+		height: 200vh;
+		background: 
+			linear-gradient(#67E5F31a, #67E5F300 17%),
+			radial-gradient(ellipse 75% 60% at 50% 0%, hsla(186, 85%, 68%, 0.25), transparent 60%),
+			radial-gradient(ellipse 60% 35% at 50% 0%, hsla(42, 100%, 85%, 0.2), transparent 50%),
+			radial-gradient(ellipse 20% 10% at 50% 0%, hsla(57, 100%, 71%, 0.1), transparent 70%),
+			linear-gradient(#3A4E7200 83%, #3A4E7226)
+		;
 	}
 
 	.testimonials {
