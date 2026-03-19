@@ -65,6 +65,8 @@
   --gray-800: #2d2d2d;
   --gray-900: #1c1c1c;
   --black: #000000;
+
+  --general-shadow: 0 0 0.5rem #63636326;
 }
 
 * {
