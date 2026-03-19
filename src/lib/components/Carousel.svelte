@@ -4,6 +4,8 @@
 
     let {
         perPage = 3,
+        visibleCards = 3,
+        cardWidth = '600px',
         loop = true,
         autoplay = 0,
         duration = 200,
@@ -20,6 +22,8 @@
         rightControl,
     }: {
         perPage?: number | Record<string, number>;
+        visibleCards?: number;
+        cardWidth?: string;
         loop?: boolean;
         autoplay?: number;
         duration?: number;
@@ -42,13 +46,14 @@
     let currentIndex = $state(0);
 
     let pips = $derived(controller ? controller.innerElements : []);
-    let currentPerPage = $derived(controller ? controller.perPage : (typeof perPage === 'number' ? perPage : 1));
-    let totalDots = $derived(controller ? Math.ceil(controller.innerElements.length / currentPerPage) : 0);
+    let currentStep = $derived(typeof perPage === 'number' ? perPage : 1);
+    let cloneCount = $derived(Math.max(1, Math.floor(visibleCards / 2)));
+    let totalDots = $derived(controller ? Math.ceil(controller.innerElements.length / currentStep) : 0);
 
     $effect(() => {
-        controller = new Siema({
+        const inst = new Siema({
             selector: siema,
-            perPage: typeof perPage === 'object' ? perPage : Number(perPage),
+            perPage: typeof perPage === 'object' ? perPage : cloneCount,
             loop,
             duration,
             easing,
@@ -60,13 +65,31 @@
             onChange: handleChange,
         });
 
+        if (loop && cloneCount > 0 && inst.innerElements.length > 0) {
+            const innerEls = inst.innerElements;
+            const frame = siema.firstElementChild as HTMLElement;
+            const L = innerEls.length;
+            const C = cloneCount;
+
+            for (let i = 0; i < C; i++) {
+                let leftIdx = (L - C - 1 - i) % L;
+                if (leftIdx < 0) leftIdx += L;
+                frame.insertBefore(innerEls[leftIdx].cloneNode(true), frame.firstChild);
+
+                let rightIdx = (C + i) % L;
+                frame.appendChild(innerEls[rightIdx].cloneNode(true));
+            }
+        }
+
+        controller = inst;
+
         if (autoplay) {
             timer = setInterval(right, autoplay);
         }
 
         return () => {
             if (autoplay && timer) clearInterval(timer);
-            if (controller) controller.destroy();
+            if (inst) inst.destroy();
         };
     });
 
@@ -77,15 +100,15 @@
     function isDotActive(idx: number, dotIndex: number) {
         let ci = idx;
         if (ci < 0) ci = pips.length + ci;
-        return ci >= dotIndex * currentPerPage && ci < dotIndex * currentPerPage + currentPerPage;
+        return ci >= dotIndex * currentStep && ci < dotIndex * currentStep + currentStep;
     }
 
     function left() {
-        controller?.prev();
+        controller?.prev(currentStep);
     }
 
     function right() {
-        controller?.next();
+        controller?.next(currentStep);
     }
 
     function go(index: number) {
@@ -111,7 +134,7 @@
     }
 </script>
 
-<div class="carousel">
+<div class="carousel" style="--visible-cards: {visibleCards}; --card-width: {cardWidth}; --clone-count: {cloneCount};">
     <div class="carousel-viewport">
         <div class="slides" bind:this={siema}>
             {@render children()}
@@ -140,7 +163,7 @@
             {#each Array(totalDots) as _, i}
                 <li class={isDotActive(currentIndex, i) ? 'active' : ''}>
                     <button
-                        onclick={() => go(i * currentPerPage)}
+                        onclick={() => go(i * currentStep)}
                         aria-label="Go to slide {i + 1}"
                     ></button>
                 </li>
@@ -153,7 +176,8 @@
     .carousel {
         position: relative;
         width: 100%;
-        max-width: 100vw;
+        max-width: calc(var(--visible-cards, 3) * var(--card-width, 600px));
+        margin: 0 auto;
     }
 
     .carousel-viewport {
@@ -163,13 +187,20 @@
     }
 
     .slides {
-    	width: 100%;
-		max-width: 600px;
+    	width: calc(var(--card-width, 600px) * var(--clone-count, 1));
 		margin: 0 auto;
 		overflow: visible !important;
+		transform: translateX(calc((var(--clone-count, 1) - 1) * var(--card-width, 600px) / 2));
+    }
+
+    .slides :global(> div) {
+        display: flex !important;
+        width: max-content !important;
+        margin-left: calc(var(--clone-count, 1) * var(--card-width, 600px) * -1) !important;
     }
 
     .slides :global(> div > div) {
+        width: var(--card-width, 600px) !important;
         display: flex !important;
         justify-content: center;
         align-items: center;

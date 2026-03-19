@@ -45,11 +45,11 @@
 	<SectionHeader text="Trusted by Industry Leaders" />
 	<div class="carousel-container">
 		<Carousel perPage={1} loop={true} autoplay={5000} dots={true} controls={true} duration={300}>
-			{#each testimonials as t}
+			{#each testimonials as testimonial}
 				<TestimonialCard
-					quote={t.quote}
-					name={t.name}
-					title={t.title}
+					quote={testimonial.quote}
+					name={testimonial.name}
+					title={testimonial.title}
 				/>
 			{/each}
 
