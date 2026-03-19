@@ -84,8 +84,8 @@
 	<div class="how-to-use-inner-container">
 		<div class="how-to-use-switcher-container">
 			<div class="how-to-use-switcher-button" style="transform: translateX({extension ? '0' : '135px'}); transition: transform 0.3s ease;"></div>
-			<p onclick={() => extension = true} style="cursor: pointer; color: {extension ? '#fff' : '#aaa'}; transition: color 0.3s ease;">Extension</p>
-			<p onclick={() => extension = false} style="cursor: pointer; color: {!extension ? '#fff' : '#aaa'}; transition: color 0.3s ease;">Web</p>
+			<p onclick={() => extension = true} style="color: {extension ? '#f7f7f7' : '#c2c2c2'};">Extension</p>
+			<p onclick={() => extension = false} style="color: {!extension ? '#f7f7f7' : '#c2c2c2'};">Web</p>
 		</div>
 
 		<div class="carousel-container">
@@ -156,6 +156,13 @@
 		z-index: 1;
 		font-size: 1.15rem;
 		font-weight: 500;
+		transition: all 0.3s ease;
+		border-radius: 1.5rem;
+	}
+
+	.how-to-use-switcher-container p:hover {
+		cursor: pointer;
+		background-color: #36363680;
 	}
 
 	.how-to-use-switcher-button {
