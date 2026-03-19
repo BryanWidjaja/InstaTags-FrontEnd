@@ -19,7 +19,7 @@
 
 <style>
     .testimonial-card {
-        background-color: #2D2D2D80;
+        background-color: hsla(0, 0%, 11%, 0.35);
         display: flex;
         flex-direction: column;
         padding: 2rem;

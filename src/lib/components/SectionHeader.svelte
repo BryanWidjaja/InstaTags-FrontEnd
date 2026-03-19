@@ -4,7 +4,7 @@
 
 <div class="section-header">
     <hr />
-    <h1 class="gradient-text">{text}</h1>
+    <h1 class="gray-gradient-text">{text}</h1>
     <hr />
 </div>
 

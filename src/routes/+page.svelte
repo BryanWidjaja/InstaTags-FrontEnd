@@ -35,7 +35,7 @@
 
 <section class="hero">
 	<div class="hero-inner-container">
-		<h1 class="hero-header gradient-text">
+		<h1 class="hero-header gray-gradient-text">
 			Save time on tags. <br/>
 			Spend it on content.
 		</h1>
@@ -135,9 +135,9 @@
 		padding: 0 15%;
 		background: 
 			linear-gradient(#67E5F300 83%, #68e5f31a),
-			radial-gradient(ellipse 75% 130% at 50% 100%, hsla(186, 85%, 68%, 0.25), transparent 60%),
-			radial-gradient(ellipse 60% 75% at 50% 100%, hsla(42, 100%, 85%, 0.2), transparent 50%),
-			radial-gradient(ellipse 20% 30% at 50% 100%, hsla(57, 100%, 71%, 0.1), transparent 70%)
+			radial-gradient(ellipse 75% 130% at 50% 100%, hsla(186, 85%, 68%, 0.2), transparent 60%),
+			radial-gradient(ellipse 60% 75% at 50% 100%, hsla(42, 100%, 85%, 0.15), transparent 50%),
+			radial-gradient(ellipse 20% 30% at 50% 100%, hsla(57, 100%, 71%, 0.05), transparent 70%)
 		;
 	}
 
@@ -181,9 +181,9 @@
 		height: 200vh;
 		background: 
 			linear-gradient(#67E5F31a, #67E5F300 17%),
-			radial-gradient(ellipse 75% 60% at 50% 0%, hsla(186, 85%, 68%, 0.25), transparent 60%),
-			radial-gradient(ellipse 60% 35% at 50% 0%, hsla(42, 100%, 85%, 0.2), transparent 50%),
-			radial-gradient(ellipse 20% 10% at 50% 0%, hsla(57, 100%, 71%, 0.1), transparent 70%),
+			radial-gradient(ellipse 75% 60% at 50% 0%, hsla(186, 85%, 68%, 0.2), transparent 60%),
+			radial-gradient(ellipse 60% 35% at 50% 0%, hsla(42, 100%, 85%, 0.15), transparent 50%),
+			radial-gradient(ellipse 20% 10% at 50% 0%, hsla(57, 100%, 71%, 0.05), transparent 70%),
 			linear-gradient(#3A4E7200 83%, #3A4E7226)
 		;
 	}

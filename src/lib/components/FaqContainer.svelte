@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { slide } from 'svelte/transition';
+
     export let question: string;
     export let answer: string;
 
@@ -19,10 +21,12 @@
         />
     </div>
 
-    <div class="faq-answer-container {open ? 'visible' : ''}">
-        <div class="vertical-line"></div>
-        <p class="faq-answer">{answer}</p>
-    </div>
+    {#if open}
+        <div class="faq-answer-container" transition:slide={{ duration: 300 }}>
+            <div class="vertical-line"></div>
+            <p class="faq-answer">{answer}</p>
+        </div>
+    {/if}
 </div>
 
 <style>
@@ -42,7 +46,7 @@
         align-items: center;
         padding: 0.75rem 1.5rem;
         border-radius: 1rem;
-        background-color: #1C1C1C80;
+        background-color: hsla(0, 0%, 11%, 0.35);
         box-shadow: var(--general-shadow);
         transition: all 0.3s ease;
         font-size: 1.15rem;
@@ -59,14 +63,9 @@
     }
 
     .faq-answer-container {
-        display: none;
+        display: flex;
         width: 45%;
         gap: 1.25rem;
-        transition: all 0.3s ease;
-    }
-
-    .faq-answer-container.visible {
-        display: flex;
     }
 
     .vertical-line {

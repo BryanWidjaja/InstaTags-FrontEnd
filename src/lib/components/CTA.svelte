@@ -3,7 +3,7 @@
 </script>
 
 <section class="cta">
-	<h2 class="cta-header gradient-text">
+	<h2 class="cta-header gray-gradient-text">
 		Tags Instantly With InstaTags
 	</h2>
 
