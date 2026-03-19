@@ -34,7 +34,22 @@
 </script>
 
 <section class="hero">
-	
+	<div class="hero-left-container">
+		<h1 class="hero-header gradient-text">
+			Save time on tags. <br/>
+			Spend it on content.
+		</h1>
+		<p class="hero-desc">
+			InstaTags instantly generates relevant hashtags from your image, so you can stop researching and focus on creating.
+		</p>
+		<div class="hero-btn-container">
+			<a href="/upload" class="primary-btn">Try Now</a>
+			<a href="/thank-you" class="outline-btn">Install For Chrome</a>
+		</div>
+	</div>
+
+	<img src="/hero/hero-hashtag.png" alt="#">
+
 </section>
 
 <section class="features">
@@ -102,7 +117,6 @@
 
 <style>
 	section {
-		min-height: 100vh;
 		width: 100%;
 		display: flex;
 		align-items: center;
@@ -110,6 +124,45 @@
 		flex-direction: column;
 		gap: 2rem;
 		padding: 5rem 0rem;
+	}
+
+	.hero {
+		height: 100vh;
+		padding-top: 112px;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0 15%;
+		background: 
+			linear-gradient(#67E5F300 83%, #68e5f31a),
+			radial-gradient(ellipse 75% 130% at 50% 100%, hsla(186, 85%, 68%, 0.25), transparent 60%),
+			radial-gradient(ellipse 60% 75% at 50% 100%, hsla(42, 100%, 85%, 0.2), transparent 50%),
+			radial-gradient(ellipse 20% 30% at 50% 100%, hsla(57, 100%, 71%, 0.1), transparent 70%)
+		;
+	}
+
+	.hero-left-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.hero-header {
+		font-family: LaurentianStd-It;
+		font-size: 3.5rem;
+	}
+
+	.hero-desc {
+		font-size: 1.25rem;
+		font-weight: 300;
+		width: 85%;
+	}
+
+	.hero-btn-container {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
 	}
 
 	.features {
