@@ -51,7 +51,7 @@
     .faq-btn {
         transform: scale(0.85);
         cursor: pointer;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease-in-out;
     }
 
     .faq-btn.rotated {

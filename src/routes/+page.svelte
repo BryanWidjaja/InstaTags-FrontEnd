@@ -1,6 +1,36 @@
 <script lang="ts">
 	import SectionHeader from "$lib/components/SectionHeader.svelte";
+	import TestimonialCard from "$lib/components/TestimonialCard.svelte";
+	import Carousel from "$lib/components/Carousel.svelte";
 	import FaqContainer from "$lib/components/FaqContainer.svelte";
+
+	const testimonials = [
+		{
+			quote: "InstaTags completely changed how I handle my posts. What used to take minutes now takes seconds. It's simple, fast, and incredibly reliable.",
+			name: "Elon Musk",
+			title: "CEO of Tesla and SpaceX",
+		},
+		{
+			quote: "I was surprised at how intuitive it is. No learning curve, no confusion — just instant results. Highly recommended!",
+			name: "Jensen Huang",
+			title: "Co-founder and CEO of NVIDIA",
+		},
+		{
+			quote: "This tool is a game-changer. It's fast, smart, and makes hashtagging feel seamless. I can't imagine going back to doing it manually.",
+			name: "Mary Barra",
+			title: "Chair and CEO of General Motors",
+		},
+		{
+			quote: "As someone who values efficiency, InstaTags delivers exactly that. It saves me time and keeps my content optimized without any hassle.",
+			name: "Sundar Pichai",
+			title: "CEO of Google and Alphabet Inc.",
+		},
+		{
+			quote: "I love how effortless everything feels. The interface is clean, and generating hashtags is instant. It's become part of my daily workflow.",
+			name: "Satya Nadella",
+			title: "Chairman and CEO of Microsoft",
+		},
+	];
 </script>
 
 <section class="hero">
@@ -12,7 +42,26 @@
 </section>
 
 <section class="testimonials">
-	
+	<SectionHeader text="Trusted by Industry Leaders" />
+	<div class="carousel-container">
+		<Carousel perPage={1} loop={true} autoplay={5000} dots={true} controls={true} duration={300}>
+			{#each testimonials as t}
+				<TestimonialCard
+					quote={t.quote}
+					name={t.name}
+					title={t.title}
+				/>
+			{/each}
+
+			{#snippet leftControl()}
+				<img src="/icons/left-arrow.svg" alt="<">
+			{/snippet}
+
+			{#snippet rightControl()}
+				<img src="/icons/right-arrow.svg" alt=">">
+			{/snippet}
+		</Carousel>
+	</div>
 </section>
 
 <section class="faq">
@@ -59,12 +108,21 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+		gap: 2rem;
+		padding: 5rem 0rem;
+	}
+
+	.features {
+		background: linear-gradient(#3A4E7200 83%, #3A4E7226);
+	}
+
+	.testimonials {
+		background-color: #3A4E7226;
 	}
 
 	.faq {
-		gap: 2rem;
-		padding: 5rem 0rem;
 		justify-content: flex-start;
+		background: linear-gradient(#3A4E7226, #3A4E7200 17%);
 	}
 
 	.faq-containers-container {
@@ -74,5 +132,13 @@
 		justify-content: center;
 		width: 100%;
 		gap: 1.5rem;
+	}
+
+	.carousel-container {
+		width: 100%;
+		max-width: 100vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>
