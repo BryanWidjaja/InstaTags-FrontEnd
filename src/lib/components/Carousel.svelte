@@ -221,12 +221,12 @@
 
     .shadow-left {
         left: 0;
-        background: linear-gradient(to right, rgb(45, 45, 45, 0.75), #2D2D2D00);
+        background: linear-gradient(to right, hsla(0, 0%, 11%, 0.6), #1c1c1c00);
     }
 
     .shadow-right {
         right: 0;
-        background: linear-gradient(to left, rgb(45, 45, 45, 0.75), #2D2D2D00);
+        background: linear-gradient(to left, hsla(0, 0%, 11%, 0.6), #1c1c1c00);
     }
 
     button {

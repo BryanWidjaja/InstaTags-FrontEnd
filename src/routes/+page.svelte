@@ -128,11 +128,7 @@
 	.hero {
 		position: relative;
 		height: 100vh;
-		width: 100%;
 		padding-top: 112px;
-		flex-direction: row;
-		justify-content: space-between;
-		padding: 0 15%;
 		background: 
 			linear-gradient(#67E5F300 83%, #68e5f31a),
 			radial-gradient(ellipse 75% 130% at 50% 100%, hsla(186, 85%, 68%, 0.2), transparent 60%),
